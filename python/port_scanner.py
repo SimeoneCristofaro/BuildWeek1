@@ -1,6 +1,5 @@
 import socket
 import csv
-import re
 
 target = input('Enter the IP address to scan (default: 192.168.100.110): ')
 portrange = input('Enter the port range to scan (default: 1-1024): ')
