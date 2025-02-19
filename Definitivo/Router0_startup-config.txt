@@ -1,0 +1,117 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 10.10.10.2 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet1/0
+ ip address 192.168.10.1 255.255.255.0
+ ip helper-address 172.16.10.11
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet2/0
+ ip address 192.168.20.1 255.255.255.0
+ ip helper-address 172.16.10.11
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet3/0
+ ip address 192.168.30.1 255.255.255.0
+ ip helper-address 172.16.10.11
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet4/0
+ ip address 192.168.40.1 255.255.255.0
+ ip helper-address 172.16.10.11
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet5/0
+ ip address 192.168.50.1 255.255.255.0
+ ip helper-address 172.16.10.11
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet6/0
+ ip address 192.168.60.1 255.255.255.0
+ ip helper-address 172.16.10.11
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet7/0
+ ip address 192.168.70.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+router ospf 50
+ router-id 1.2.1.2
+ log-adjacency-changes
+ network 192.168.10.0 0.0.0.255 area 0
+ network 192.168.20.0 0.0.0.255 area 0
+ network 192.168.30.0 0.0.0.255 area 0
+ network 192.168.40.0 0.0.0.255 area 0
+ network 192.168.50.0 0.0.0.255 area 0
+ network 192.168.60.0 0.0.0.255 area 0
+ network 192.168.70.0 0.0.0.255 area 0
+ network 10.10.10.0 0.0.0.3 area 0
+!
+router rip
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
