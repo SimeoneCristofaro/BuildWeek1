@@ -1,6 +1,8 @@
+# importo la libreria http.client
+# che contiene i metodi per perfezionare una connessione http
 import http.client
 
-# Lista di metodi da interrogare interrogare
+# Tupla che contiene i metodi da interrogare
 http_methods = ('GET', 'POST', 'DELETE', 'PATCH', 'OPTIONS', 'PUT', 'HEAD', 'CONNECT', 'TRACE')
 
 host = input('Inserire URL completa del sistema target (default:192.168.100.110/phpMyAdmin/index.php):')
@@ -8,13 +10,14 @@ host = input('Inserire URL completa del sistema target (default:192.168.100.110/
 if host == "":
     host = "192.168.100.110/phpMyAdmin/index.php"
 
-url_path = ""
-# estraggo il dominio dalla stringa.
-url_domain = host.split('/')[0]
+host = host.split('/')
+url_domain = host[0]
 
-# compongo la ppath
-for i in range(1, len(host.split('/'))):
-    url_path = url_path + "/" + host.split('/')[i]
+url_path = ""
+for i in range(1, len(host)):
+    url_path = url_path + "/" + host[i]
+    # 1 - url_path = "/phpMyAdmin"
+    # 2 - url_path = "/phpMyAdmin/index.php"
 
 
 port = input('Inserire la porta del sistema target (default:80): ')
