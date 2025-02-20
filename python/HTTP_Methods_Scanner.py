@@ -23,11 +23,7 @@ for i in range(len(http_methods)):
         connection = http.client.HTTPConnection(url_domain,port)
         connection.request(http_methods[i], url_path)
         response = connection.getresponse()
-        print(http_methods[i] + " : ", response.status)
-        if(response.status == 200):
-            print("metodo ammesso\n")
-        else:
-            print("metodo non ammesso\n")
+        print(http_methods[i] + " : ", response.status, " - ", response.reason)
         connection.close()
     except ConnectionRefusedError:
         print("Connessione fallita")
