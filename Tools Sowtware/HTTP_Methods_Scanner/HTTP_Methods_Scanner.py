@@ -7,7 +7,9 @@ http_methods = ('GET', 'POST', 'DELETE', 'PATCH', 'OPTIONS', 'PUT', 'HEAD', 'CON
 
 host = input('Inserire URL completa del sistema target (default:192.168.100.110/phpMyAdmin/index.php):')
 
+# Se non ho inserito nulla input
 if host == "":
+    # Assegno in automatico il valore di default
     host = "192.168.100.110/phpMyAdmin/index.php"
 
 host = host.split('/')
