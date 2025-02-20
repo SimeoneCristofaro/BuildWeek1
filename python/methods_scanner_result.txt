@@ -1,28 +1,11 @@
 Inserire URL completa del sistema target (default:192.168.100.110/phpMyAdmin/index.php):
 Inserire la porta del sistema target (default:80): 
-GET :  200
-metodo ammesso
-
-POST :  200
-metodo ammesso
-
-DELETE :  200
-metodo ammesso
-
-PATCH :  200
-metodo ammesso
-
-OPTIONS :  200
-metodo ammesso
-
-PUT :  200
-metodo ammesso
-
-HEAD :  200
-metodo ammesso
-
-CONNECT :  400
-metodo non ammesso
-
-TRACE :  200
-metodo ammesso
+GET :  200  -  OK
+POST :  200  -  OK
+DELETE :  200  -  OK
+PATCH :  200  -  OK
+OPTIONS :  200  -  OK
+PUT :  200  -  OK
+HEAD :  200  -  OK
+CONNECT :  400  -  Bad Request
+TRACE :  200  -  OK
