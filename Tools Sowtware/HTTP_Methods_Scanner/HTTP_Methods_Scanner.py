@@ -1,5 +1,6 @@
 import http.client
 
+# Lista di metodi da interrogare interrogare
 http_methods = ('GET', 'POST', 'DELETE', 'PATCH', 'OPTIONS', 'PUT', 'HEAD', 'CONNECT', 'TRACE')
 
 host = input('Inserire URL completa del sistema target (default:192.168.100.110/phpMyAdmin/index.php):')
@@ -8,10 +9,13 @@ if host == "":
     host = "192.168.100.110/phpMyAdmin/index.php"
 
 url_path = ""
+# estraggo il dominio dalla stringa.
 url_domain = host.split('/')[0]
 
+# compongo la ppath
 for i in range(1, len(host.split('/'))):
     url_path = url_path + "/" + host.split('/')[i]
+
 
 port = input('Inserire la porta del sistema target (default:80): ')
 
@@ -19,12 +23,19 @@ if(port == ""):
     port = 80
 
 for i in range(len(http_methods)):
+    # provo a inviare la richiesta al web Server
     try:
+        # connessione al dominio sulla porta
         connection = http.client.HTTPConnection(url_domain,port)
+        # richiedo la path
         connection.request(http_methods[i], url_path)
+        # estraggo la risposta
         response = connection.getresponse()
+        # scrivo a schermo il codice di stato e il suo significato
         print(http_methods[i] + " : ", response.status, " - ", response.reason)
+        # chiudo la connessione
         connection.close()
     except ConnectionRefusedError:
+        # connessione non stabilita. Gestisco l'eccezione scrivendo a schermo
         print("Connessione fallita")
 
