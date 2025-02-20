@@ -11,6 +11,10 @@ if host == "":
     host = "192.168.100.110/phpMyAdmin/index.php"
 
 host = host.split('/')
+# host[0] = "192.168.100.110"
+# host[1] = "phpMyAdmin"
+# host[2] = "index.php"
+
 url_domain = host[0]
 
 url_path = ""
