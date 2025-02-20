@@ -3,7 +3,7 @@
 import http.client
 
 # Tupla che contiene i metodi da interrogare
-http_methods = ('GET', 'POST', 'DELETE', 'PATCH', 'OPTIONS', 'PUT', 'HEAD', 'CONNECT', 'TRACE')
+http_methods = ['GET', 'POST', 'DELETE', 'PATCH', 'OPTIONS', 'PUT', 'HEAD', 'CONNECT', 'TRACE']
 
 host = input('Inserire URL completa del sistema target (default:192.168.100.110/phpMyAdmin/index.php):')
 
