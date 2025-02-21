@@ -35,6 +35,7 @@ no ipv6 cef
 interface GigabitEthernet1/0
  ip address 172.16.1.10 255.255.255.248
  ip access-group 170 in
+ ip access-group 171 out
  duplex auto
  speed auto
 !
@@ -123,6 +124,13 @@ access-list 170 deny ip 172.16.1.0 0.0.0.7 192.168.4.0 0.0.0.63
 access-list 170 deny ip 172.16.1.0 0.0.0.7 192.168.5.0 0.0.0.63
 access-list 170 deny ip 172.16.1.0 0.0.0.7 192.168.6.0 0.0.0.63
 access-list 170 deny ip 172.16.1.0 0.0.0.7 192.168.10.0 0.0.0.63
+access-list 171 deny ip 192.168.6.0 0.0.0.63 172.16.1.0 0.0.0.7
+access-list 171 deny ip 192.168.5.0 0.0.0.63 172.16.1.0 0.0.0.7
+access-list 171 deny ip 192.168.4.0 0.0.0.63 172.16.1.0 0.0.0.7
+access-list 171 deny ip 192.168.3.0 0.0.0.63 172.16.1.0 0.0.0.7
+access-list 171 deny ip 192.168.2.0 0.0.0.63 172.16.1.0 0.0.0.7
+access-list 171 deny ip 192.168.1.0 0.0.0.63 172.16.1.0 0.0.0.7
+access-list 171 deny ip 192.168.10.0 0.0.0.63 172.16.1.0 0.0.0.7
 access-list 110 permit ip any any
 access-list 120 permit ip any any
 access-list 130 permit ip any any
