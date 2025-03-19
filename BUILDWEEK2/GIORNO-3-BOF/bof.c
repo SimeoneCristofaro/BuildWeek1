@@ -11,7 +11,7 @@ k=0;
 while(1){
 	printf("------- MENU --------\n");
 	printf("1) Programma corretto\n");
-	printf("2) Programma con possibile BOF\n");
+	printf("2) Programma con BOF\n");
 	printf("---------------------\n");
 	printf("Scelta: ");
 	scanf("%d", &scelta);
