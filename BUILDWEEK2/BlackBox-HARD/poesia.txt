@@ -1,3 +1,6 @@
+// EDIT: steghide extract theta-logo.jpd
+// pwd: accio
+
 Nel bosco incantato, sotto il cielo stellato,
 Luca e Milena, maghi innamorati, si diedero appuntamento,
 Era il 22 o il 2222? Un sussurro appena accennato,
