@@ -1,2 +1,0 @@
-// Usata come password per steghide su theta-logo.jpg.bk
-wand=c2MqVDFsOVN5ezVi
